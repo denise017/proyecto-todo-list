@@ -1,12 +1,15 @@
 import styles from './style.module.css'
 import TaskFilter from '../TaskFilter/TaskFilter'
 
-function Sidebar() {
+function Sidebar({ filter, onFilterChange }) {
   return (
     <aside className={styles.sidebar}>
       <h2>Todo List</h2>
 
-      <TaskFilter />
+      <TaskFilter
+        filter={filter}
+        onFilterChange={onFilterChange}
+      />
 
       <img
         src="/plant.svg"
