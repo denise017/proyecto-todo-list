@@ -22,11 +22,15 @@
 
 @media (max-width: 600px) {
   .sidebar {
-    border-bottom: 1px solid #cce9e1;
     width: 100%;
     padding-right: 0;
+    padding-bottom: 20px;
     border-right: none;
-    padding-bottom: 15px;
+    border-bottom: 1px solid #cce9e1;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 15px;
   }
 
   .plant {
