@@ -44,6 +44,12 @@ const filteredTasks = tasks.filter((task) => {
   return true
 })
 
+const listTitle =
+  filter === 'completed'
+    ? 'Tareas completadas'
+    : filter === 'pending'
+      ? 'Tareas pendientes'
+      : 'Mis tareas'
 
   return (
     <div className={styles.appContainer}>
@@ -54,11 +60,10 @@ const filteredTasks = tasks.filter((task) => {
           <img src="/sprout.svg" alt="" />
           Mis tareas
         </h1>
-
-        <p className={styles.summary}>Organizá tus tareas diarias</p>
-
+        
         <TaskForm onAddTask={addTask} />
         <TaskList
+        title={listTitle}
         tasks={filteredTasks}
         onToggleTask={toggleTask}
         onDeleteTask={deleteTask}

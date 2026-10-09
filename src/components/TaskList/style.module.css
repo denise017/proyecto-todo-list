@@ -35,16 +35,19 @@
 }
 
 .taskItem input {
-  accent-color: #00bb85;
   width: 18px;
   height: 18px;
+  accent-color: #00bb85;
   cursor: pointer;
+  outline-color: #00bb85;
 }
 
 .completed {
   text-decoration: line-through;
-  color: #8ca9a1;
+  color: #6f9188;
 }
+
+
 .taskList li {
   display: flex;
   align-items: center;
@@ -73,4 +76,31 @@
 
 .deleteButton:hover {
   background-color: #ffe5e5;
+}
+.deleteButton img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.taskItem input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #00bb85;
+  border-radius: 4px;
+  background-color: white;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+}
+
+.taskItem input[type="checkbox"]:checked {
+  background-color: #00bb85;
+}
+
+.taskItem input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
