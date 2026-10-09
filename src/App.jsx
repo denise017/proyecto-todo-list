@@ -24,6 +24,10 @@ function App() {
   ))
 }
 
+function deleteTask(id) {
+  setTasks(tasks.filter((task) => task.id !== id))
+}
+
   return (
     <div className={styles.appContainer}>
       <Sidebar />
@@ -37,7 +41,12 @@ function App() {
         <p className={styles.summary}>Organizá tus tareas diarias</p>
 
         <TaskForm onAddTask={addTask} />
-        <TaskList tasks={tasks} onToggleTask={toggleTask} />
+        <TaskList
+        tasks={tasks}
+        onToggleTask={toggleTask}
+        onDeleteTask={deleteTask}
+        />
+        
       </main>
     </div>
   )
