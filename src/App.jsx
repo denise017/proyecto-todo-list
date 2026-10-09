@@ -16,6 +16,13 @@ function App() {
 
     setTasks([...tasks, newTask])
   }
+  function toggleTask(id) {
+  setTasks(tasks.map((task) =>
+    task.id === id
+      ? { ...task, completed: !task.completed }
+      : task
+  ))
+}
 
   return (
     <div className={styles.appContainer}>
@@ -30,7 +37,7 @@ function App() {
         <p className={styles.summary}>Organizá tus tareas diarias</p>
 
         <TaskForm onAddTask={addTask} />
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} onToggleTask={toggleTask} />
       </main>
     </div>
   )

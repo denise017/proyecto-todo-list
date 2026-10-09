@@ -27,3 +27,21 @@
   padding: 15px 20px;
   
 }
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.taskItem input {
+  accent-color: #00bb85;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #8ca9a1;
+}
