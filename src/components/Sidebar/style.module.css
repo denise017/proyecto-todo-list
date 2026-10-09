@@ -1,0 +1,35 @@
+.sidebar {
+  border-right: 1px solid #cce9e1;
+  width: 220px;
+  flex-shrink: 0;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  color: #285c53;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.plant {
+  width: 130px;
+  height: auto;
+  margin-top: auto;
+  align-self: center;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    border-bottom: 1px solid #cce9e1;
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: 15px;
+  }
+
+  .plant {
+    display: none;
+  }
+}
