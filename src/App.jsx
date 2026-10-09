@@ -1,8 +1,22 @@
+import { useState } from 'react'
 import styles from './App.module.css'
 import Sidebar from './components/Sidebar/Sidebar'
 import TaskForm from './components/TaskForm/TaskForm'
 import TaskList from './components/TaskList/TaskList'
+
 function App() {
+  const [tasks, setTasks] = useState([])
+
+  function addTask(text) {
+    const newTask = {
+      id: crypto.randomUUID(),
+      text: text,
+      completed: false
+    }
+
+    setTasks([...tasks, newTask])
+  }
+
   return (
     <div className={styles.appContainer}>
       <Sidebar />
@@ -11,11 +25,12 @@ function App() {
         <h1 className={styles.title}>
           <img src="/sprout.svg" alt="" />
           Mis tareas
-          </h1>
+        </h1>
+
         <p className={styles.summary}>Organizá tus tareas diarias</p>
 
-        <TaskForm />
-        <TaskList />
+        <TaskForm onAddTask={addTask} />
+        <TaskList tasks={tasks} />
       </main>
     </div>
   )
