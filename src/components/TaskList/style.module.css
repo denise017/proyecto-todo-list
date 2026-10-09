@@ -45,3 +45,32 @@
   text-decoration: line-through;
   color: #8ca9a1;
 }
+.taskList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.taskItem {
+  flex: 1;
+  min-width: 0;
+}
+
+.taskItem span {
+  overflow-wrap: anywhere;
+}
+
+.deleteButton {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #ffe5e5;
+}

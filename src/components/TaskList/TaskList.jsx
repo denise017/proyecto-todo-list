@@ -1,6 +1,6 @@
 import styles from './style.module.css'
 
-function TaskList({ tasks, onToggleTask }) {
+function TaskList({ tasks, onToggleTask, onDeleteTask }) {
   return (
     <section className={styles.taskList}>
       <h2>Mis tareas</h2>
@@ -22,6 +22,16 @@ function TaskList({ tasks, onToggleTask }) {
                   {task.text}
                 </span>
               </label>
+
+              <button
+                type="button"
+                className={styles.deleteButton}
+                onClick={() => onDeleteTask(task.id)}
+                aria-label={`Eliminar ${task.text}`}
+                title="Eliminar tarea"
+              >
+                🗑
+              </button>
             </li>
           ))}
         </ul>
