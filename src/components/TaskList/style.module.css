@@ -1,0 +1,14 @@
+.taskList {
+  margin-top: 30px;
+}
+
+.taskList h2 {
+  color: #285c53;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.taskList p {
+  font-size: 14px;
+  color: #46776d;
+}
