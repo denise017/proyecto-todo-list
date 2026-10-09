@@ -9,6 +9,21 @@
 }
 
 .taskList p {
-  font-size: 14px;
   color: #46776d;
+  font-size: 14px;
+}
+.taskList ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.taskList li {
+  color: #285c53;
+  background-color: #ffffff;
+  border: 1px solid #cce9e1;
+  border-radius: 20px;
+  padding: 15px 20px;
+  
 }

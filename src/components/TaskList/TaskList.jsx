@@ -1,10 +1,19 @@
 import styles from './style.module.css'
 
-function TaskList() {
+function TaskList({ tasks }) {
   return (
     <section className={styles.taskList}>
       <h2>Mis tareas</h2>
-      <p>Todavía no hay tareas. ¡Agregá una!</p>
+
+      {tasks.length === 0 ? (
+        <p>Todavía no hay tareas. ¡Agregá una!</p>
+      ) : (
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>{task.text}</li>
+          ))}
+        </ul>
+      )}
     </section>
   )
 }
