@@ -1,9 +1,9 @@
 import styles from './style.module.css'
 
-function TaskList({ tasks, onToggleTask, onDeleteTask }) {
+function TaskList({ title, tasks, onToggleTask, onDeleteTask }) {
   return (
     <section className={styles.taskList}>
-      <h2>Mis tareas</h2>
+      <h2>{title}</h2>
 
       {tasks.length === 0 ? (
         <p>Todavía no hay tareas. ¡Agregá una!</p>
@@ -30,7 +30,7 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
                 aria-label={`Eliminar ${task.text}`}
                 title="Eliminar tarea"
               >
-                🗑
+                <img src="/bin.svg" alt="" />
               </button>
             </li>
           ))}
