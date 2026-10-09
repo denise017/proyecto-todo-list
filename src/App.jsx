@@ -6,6 +6,7 @@ import TaskList from './components/TaskList/TaskList'
 
 function App() {
   const [tasks, setTasks] = useState([])
+  const [filter, setFilter] = useState('all')
 
   function addTask(text) {
     const newTask = {
@@ -28,9 +29,17 @@ function deleteTask(id) {
   setTasks(tasks.filter((task) => task.id !== id))
 }
 
+const filteredTasks = tasks.filter((task) => {
+  if (filter === 'completed') return task.completed
+  if (filter === 'pending') return !task.completed
+
+  return true
+})
+
+
   return (
     <div className={styles.appContainer}>
-      <Sidebar />
+      <Sidebar filter={filter} onFilterChange={setFilter} />
 
       <main className={styles.mainContent}>
         <h1 className={styles.title}>
@@ -42,7 +51,7 @@ function deleteTask(id) {
 
         <TaskForm onAddTask={addTask} />
         <TaskList
-        tasks={tasks}
+        tasks={filteredTasks}
         onToggleTask={toggleTask}
         onDeleteTask={deleteTask}
         />
